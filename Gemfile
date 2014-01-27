@@ -9,6 +9,12 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
+#Testing
+group :test do
+	gem 'selenium-webdriver', '~> 2.35.0'
+	gem 'capybara', '~> 2.1.0'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
