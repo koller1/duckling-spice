@@ -22,9 +22,4 @@ describe "Initial Pages" do
 		it { should have_content('About') }
 	end
 
-	describe "Sign Up page" do
-		before { visit signup_path }
-
-		it { should have_content('Sign Up') }
-	end
 end
