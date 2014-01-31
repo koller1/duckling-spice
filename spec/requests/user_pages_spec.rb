@@ -8,26 +8,28 @@ describe "User pages" do
 		before { visit signup_path }
 		let(:submit) { "Create my account" }
 		it { should have_content('Sign Up') }
-	end
 
-	describe "Invalid Information" do
-		it "should not create users" do
-			expect { click_button :submit }.not_to change(User, :count)
-		end
-	end
 
-	describe "Valid information" do
-		before do
-			fill_in "Name",          with: "Example Person"
-			fill_in "Email",         with: "example3@gmail.com"
-			fill_in "Password",      with: "foobar"
-			fill_in "Confirmation",  with: "foobar"
+		describe "Invalid Information" do
+			it "should not create users" do
+				expect { click_button "Create my account" }.not_to change(User, :count)
+			end
 		end
 	
-		it "should create a user" do
-			expect { click_button "Create my account" }.to change(User, :count).by(1)
+		describe "Valid information" do
+			before do
+				fill_in "Name",          with: "Example Person"
+				fill_in "Email",         with: "example3@gmail.com"
+				fill_in "Password",      with: "foobar"
+				fill_in "Confirmation",  with: "foobar"
+			end
+		
+			it "should create a user" do
+				expect { click_button "Create my account" }.to change(User, :count).by(1)
+			end
 		end
 	end
+
 
 	describe "profile page" do
 		let(:user) { FactoryGirl.create(:user) }
