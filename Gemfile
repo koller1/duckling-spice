@@ -17,6 +17,12 @@ group :test do
 	gem 'factory_girl_rails', '~> 4.2.0'
 end
 
+# Use Will Paginate for paginating!
+gem 'will_paginate', '~> 3.0.0'
+
+# Use Faker to make user profiles
+gem 'faker', '~> 1.1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
