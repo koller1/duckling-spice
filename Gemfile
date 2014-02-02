@@ -17,6 +17,12 @@ group :test do
 	gem 'factory_girl_rails', '~> 4.2.0'
 end
 
+# Heroku Postgre sql database
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
 # Use Will Paginate for paginating!
 gem 'will_paginate', '~> 3.0.0'
 
