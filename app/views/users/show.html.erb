@@ -2,6 +2,7 @@
 <h1>My Profile Page!</h1>
 <p><%= @user.name + " " + @user.email %></p>
 <%= link_to "Edit Profile",  edit_user_path(@user), class: "btn btn-large btn-primary" %>
+<%= link_to "New Post",  new_post_path, class: "btn btn-large btn-primary" %>
 <h1>Listing posts</h1>
 
 <table>
