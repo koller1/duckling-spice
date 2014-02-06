@@ -1,6 +1,13 @@
 class User < ActiveRecord::Base
 	has_secure_password
   has_many :posts
+
+	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+	has_many :followed_users, through: :relationships, source: :followed
+
+	has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
+	has_many :followers, through: :reverse_relationships, source: :follower
+
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
 	validates :name, presence: true, length: { maximum: 50 }
@@ -18,15 +25,16 @@ class User < ActiveRecord::Base
 		Digest::SHA1.hexdigest(token.to_s)
 	end
 
-	# Bad performance - Validates all fields then checks error msgs
-	def self.valid_attribute?(name, value)
-		temp = self.new( name => value)
-		if temp.valid?
-			true
-		else
-			valid = !temp.errors.has_key?(name.to_sym)
-			valid
-		end
+	def following?(other_user)
+		relationships.find_by(followed_id: other_user.id)
+	end
+
+	def follow!(other_user)
+		relationships.create!(followed_id: other_user.id)
+	end
+
+	def unfollow!(other_user)
+		relationships.find_by(followed_id: other_user.id).destroy
 	end
 
 	private
