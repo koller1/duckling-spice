@@ -18,6 +18,11 @@ class UsersController < ApplicationController
 	  end
   end
 
+  def feed
+    @user = User.find(params[:id])
+    @posts = Post.all.order('created_at DESC')
+  end
+
   def show
 			@user = User.find(params[:id])
   end
