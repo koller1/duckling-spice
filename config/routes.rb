@@ -15,6 +15,7 @@ FirstApp::Application.routes.draw do
 	get 'help', to: 'static_pages#help'
 	get 'about', to: 'static_pages#about'
 
+  get 'users/:id/feed/', to: 'users#feed'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
