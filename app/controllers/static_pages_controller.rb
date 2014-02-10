@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     if signed_in?
-      redirect_to current_user 
+      redirect_to :controller => 'users', :action => 'feed', :id => current_user.id
     else
       render :layout => "home_layout"
     end

@@ -1,21 +1,25 @@
-<h1>Edit Profile</h1>
+<%= stylesheet_link_tag 'sign_up', :media => 'screen' %>
+<div class="container">
+  <div class="form-signin">
+    <h2 class="form-signin-heading">Edit Profile</h2>
 
-<%= form_for @user do |f| %>
-	<%= render 'shared/error_messages' %>
-		
-	<%= f.label :name, class: 'control-label' %>
-	<%= f.text_field :name, class: 'form-control' %>
-
-	<%= f.label :email, class: 'control-label' %>
-	<%= f.text_field :email, class: 'form-control' %>
-
-<!---Text single edit functionality
+      <%= form_for @user do |f| %>
+	    <%= render 'shared/error_messages' %>
+	    <%= f.label :name %>	
+      <%= f.text_field :name, class: 'input-text input-block-level', placeholder: 'Name' %>
+      <%= f.label :email %>	
+      <%= f.text_field :email, class: 'input-text input-block-level', placeholder: 'Email' %>
+<!--
 	<%= f.label :password, class: 'control-label' %>
 	<%= f.password_field :password, class: 'form-control' %>
+  <%= f.text_field :name, class: 'input-text input-block-level', placeholder: 'Name' %>
 
 	<%= f.label :password_confirmation, "Confirmation", class: 'control-label' %>
 	<%= f.password_field :password_confirmation, class: 'form-control' %>
+  <%= f.text_field :name, class: 'input-text input-block-level', placeholder: 'Name' %>
 --->
-	<%= f.submit "Save Changes", class: "btn btn-lg btn-primary" %>
+	    <%= f.submit "Save Changes", class: "btn btn-lg btn-primary" %>
+      <% end %>
 
-<% end %>
+  </div>
+</div>

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140208230314) do
+=======
+ActiveRecord::Schema.define(version: 20140205225812) do
+>>>>>>> 71bc185829da87165b8588688eed236d9f409980
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -21,8 +25,11 @@ ActiveRecord::Schema.define(version: 20140208230314) do
     t.integer  "user_id"
   end
 
+<<<<<<< HEAD
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
+=======
+>>>>>>> 71bc185829da87165b8588688eed236d9f409980
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -34,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140208230314) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
+<<<<<<< HEAD
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -52,6 +60,8 @@ ActiveRecord::Schema.define(version: 20140208230314) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
+=======
+>>>>>>> 71bc185829da87165b8588688eed236d9f409980
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"

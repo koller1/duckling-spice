@@ -1,0 +1,30 @@
+.full {
+  background: url("soccer-guy.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body{
+  background-color:transparent;
+}
+.jumbotron {
+        margin: 80px 0;
+        text-align: center;
+        background-color: transparent;
+        color: #FFF;
+        vertical-align: middle;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
