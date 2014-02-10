@@ -1,10 +1,18 @@
-p, h1 {
-  text-align: left;
+.profile-thumbnail{
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 0px;
 }
 
-.panel {
-  border-color:#E0F8E0;
-  border-width: 4px;
+.thumbnail{
+  padding: 20px;
+  border: 0px;
+}
+
+.card{
+  min-height: 300px;
+  max-height: 300px;
+  overflow: scroll;
 }
 
 

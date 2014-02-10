@@ -1,31 +1,59 @@
-<% provide(:title, @user.name) %>
-<%= render 'follow_form' if signed_in? %>
 <%= stylesheet_link_tag 'profile', :media => 'screen' %>
-<div class="row">
-  <div class="panel panel-default col-md-2">
-    <div class="panel-body">
-      <img src="http://placehold.it/150x150">
-      <p><%= @user.name + " " + @user.email %></p>
-      <%= link_to "Edit Profile",  edit_user_path(@user), class: "btn btn-large btn-primary" %>
-      <%= link_to "New Post",  new_post_path, class: "btn btn-large btn-primary" %>
-    </div>
-  </div>
-  <div class="col-md-8">
-    <h1><%= @user.name + "'s Profile"%></h1>
-  </div>
-</div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header"><%= @user.name %></li>
+              <li class="profile-thumbnail"><ul class="thumbnails">
+                <li="thumbnail-pic">
+                  <div class="thumbnail">
+                    <img src="http://placehold.it/250x200">
+                    <h4>Chicago, IL</h4>
+                  </div>
+                </li>
+              </ul>
+              </li>
+              <li><%= link_to "New Post",  new_post_path, class: "a" %></li>
+              <li><%= link_to "Edit Profile",  edit_user_path(@user), class: "a" %></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
 
-<div class="container">
-<% @user.posts.each do |post| %>
-  <div class="row">
-	  <div class="panel panel-default col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-      <div class="panel-body">
-        <p><%= post.title %></p>
-        <p><%= post.text %></p> 
-        <p><%= link_to 'Edit', edit_post_path(post) %></p>
-        <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
-	  </div>
-  </div>
-<% end %>
-</div>
+        <div class="span9">
+          <div class="hero-unit">
+            <h1><%= @user.name + "'s Profile"%></h1>
+            <p>Welcome to my profile!  I like to talk about all kinds of sports.  Sports are the greatest.  I wish I could marry Aaron Rodgers.  He's so cute.  And I hear he's gay.</p>
+          </div>
+
+
+            <% @user.posts.each_with_index do |post, index| %>
+            <% if index % 3 == 0 %>
+            <%= raw "<div class='row-fluid'>" %>
+            <% end %>
+              <div class="span4">
+                <div class="card">
+                  <h2 class="card-heading simple"><%= post.title %></h2>
+                    <div class="card-body">
+                      <p><%= post.text %></p>
+                      <p><a class="btn" href="#">View details &raquo;</a></p>
+                    </div>
+                 </div>
+              </div><!--/span-->
+            <% if index % 3 == 2 %>
+            <%= raw "</div>" %>
+            <% elsif @user.posts.length == index + 1 %>
+            <%= raw "</div>" %>
+            <% end %>
+            <% end %>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+
+   </body>
+</html>
+
+
