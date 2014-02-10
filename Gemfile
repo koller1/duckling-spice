@@ -23,6 +23,11 @@ group :production do
 	gem 'rails_12factor'
 end
 
+gem 'therubyracer'
+gem 'less-rails'
+gem 'less-rails-fontawesome'
+gem 'bootplus-rails'
+
 # Use Will Paginate for paginating!
 gem 'will_paginate', '~> 3.0.0'
 
