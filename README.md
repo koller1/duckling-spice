@@ -1,4 +1,5 @@
-# Ruby on Rails Tutorial: First Application
+# Sports Social Network (Working Title)
 
-This is the first application for the
-Ruby on Rails tutorial
+This is the repository for our sports social networking and news aggregator.
+
+
