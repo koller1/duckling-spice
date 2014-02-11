@@ -27,7 +27,7 @@
           </div>
 
 
-            <% @user.posts.each_with_index do |post, index| %>
+            <% @user.posts.order("created_at desc").each_with_index do |post, index| %>
             <% if index % 3 == 0 %>
             <%= raw "<div class='row-fluid'>" %>
             <% end %>
