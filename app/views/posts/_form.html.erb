@@ -15,7 +15,6 @@
        <% end %>
        <%= f.text_field :title, class: 'input-text input-block-level', placeholder: 'Title' %>
        <%= f.text_area :text, class: 'input-text input-block-level', placeholder: 'Text' %>
-       <%= f.hidden_field :user_id, :value => @user.id %>
 			<%= f.submit "Post", class: "btn btn-primary" %>
     <% end %>
   </div>
