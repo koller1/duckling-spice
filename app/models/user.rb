@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
 	acts_as_voter #Adds voter helper methods
 
+	searchable do
+		text :name
+	end
+
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
 	end

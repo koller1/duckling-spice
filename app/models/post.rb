@@ -3,4 +3,8 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
 
 	acts_as_votable #Gem for voting on posts
+
+	searchable do
+		text :title, :text
+	end
 end
