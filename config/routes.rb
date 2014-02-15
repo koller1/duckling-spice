@@ -17,6 +17,8 @@ FirstApp::Application.routes.draw do
 
   get 'users/:id/feed/', to: 'users#feed'
 
+	get 'search', to: 'search#search'
+
 	#Should probably change from get request to POST and DELETE
 	get 'post/:id/like', to: 'posts#like', as: 'like_post'
 	get 'post/:id/unlike', to: 'posts#unlike', as: 'unlike_post'
