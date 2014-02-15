@@ -1,0 +1,15 @@
+<h1>Search Results</h1>
+
+<h1><%= pluralize(@post_search.total, 'post') %></h1>
+<% @posts.each do |post| %>
+	<div class=<%= "post#{post.id}" %>>
+		<%= post.title %> | <%= link_to 'Show', post %>
+	</div>
+<% end %>
+
+<h1><%= pluralize(@user_search.total, 'user') %></h1>
+<% @users.each do |user| %>
+	<div class=<%= "user#{user.id}" %>>
+		<%= user.name %> | <%= link_to 'Show', user %>
+	</div>
+<% end %>

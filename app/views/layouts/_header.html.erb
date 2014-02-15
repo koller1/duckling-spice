@@ -10,6 +10,11 @@
           </button>
           <a class="brand" href="/">Sports and Stuff</a>
           <div class="nav-collapse collapse">
+					
+						<%= form_tag("/search", method: :get, class: "navbar-form pull-left") do %>
+							<%= text_field_tag :q, nil, class: "search-query", placeholder: "Search"%>
+						<% end %>
+
             <p class="navbar-text pull-right">
               <% if signed_in? %>
               <%= link_to "Sign Out", signout_path, method: :delete %>
