@@ -20,6 +20,3 @@ doc/
 database.yml
 .idea
 .secret
-/db/schema.rb
-/db/seeds.rb
-/lib/tasks/*
