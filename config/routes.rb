@@ -16,6 +16,11 @@ FirstApp::Application.routes.draw do
 	get 'about', to: 'static_pages#about'
 
   get 'users/:id/feed/', to: 'users#feed'
+
+	#Should probably change from get request to POST and DELETE
+	get 'post/:id/like', to: 'posts#like', as: 'like_post'
+	get 'post/:id/unlike', to: 'posts#unlike', as: 'unlike_post'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
