@@ -71,6 +71,7 @@
                   <h2 class="card-heading simple"><%= post.title %></h2>
                     <div class="card-body">
                       <p><%= post.text %></p>
+											<%= render 'posts/like_form', post: post %>
                       <p><a class="btn" href="#">View details &raquo;</a></p>
                     </div>
                  </div>
