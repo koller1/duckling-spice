@@ -23,6 +23,9 @@ group :production do
 	gem 'rails_12factor'
 end
 
+# Taggings Gem
+gem 'acts-as-taggable-on'
+
 gem 'therubyracer'
 gem 'less-rails'
 gem 'less-rails-fontawesome'
