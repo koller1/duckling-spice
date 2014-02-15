@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   validates :user_id, presence: true
 
+	acts_as_votable #Gem for voting on posts
 	acts_as_taggable # Alias for acts_as_taggable_on :tags
 
 	private

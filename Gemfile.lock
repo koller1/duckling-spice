@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (3.0.1)
       rails (>= 3, < 5)
+    acts_as_votable (0.8.0)
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -172,7 +173,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   acts-as-taggable-on
+=======
+  acts_as_votable (~> 0.8.0)
+>>>>>>> e7a997b20c40a74f0930e4f5ca8367ce8fc39ff0
   bcrypt-ruby (~> 3.1.2)
   bootplus-rails
   capybara (~> 2.1.0)

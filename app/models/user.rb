@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 							uniqueness: { case_sensitive: false }
 	validates :password, length: { minimum: 6 }, on: :create
 
+	acts_as_voter #Adds voter helper methods
 
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64

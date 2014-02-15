@@ -26,6 +26,9 @@ end
 # Taggings Gem
 gem 'acts-as-taggable-on'
 
+# Post rating/voting
+gem 'acts_as_votable', '~> 0.8.0'
+
 gem 'therubyracer'
 gem 'less-rails'
 gem 'less-rails-fontawesome'
