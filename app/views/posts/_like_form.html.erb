@@ -1,4 +1,4 @@
-<% unless current_user?(post.user) %> 
+<% if signed_in? && !current_user?(post.user) %> 
 	<div id="like_form<%= post.id %>"> 
 		<% if current_user.voted_for?(post) %>
 			<%= render 'posts/unlike', post: post %>

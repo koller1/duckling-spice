@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :signed_in_user, only: [:create, :destroy, :new]
   # GET /posts
   # GET /posts.json
@@ -64,12 +64,10 @@ class PostsController < ApplicationController
   end
 
 	def like
-		@post = Post.find(params[:id])
 		@post.liked_by current_user
 	end
 
 	def unlike
-		@post = Post.find(params[:id])
 		@post.unliked_by current_user
 	end
 
