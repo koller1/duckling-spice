@@ -7,6 +7,7 @@ gem 'rails', '4.0.2'
 group :development, :test do
 	gem 'rspec-rails', '~> 2.13.0'
 	gem 'sqlite3'
+	gem 'sunspot_solr'
 end
 
 #Testing
@@ -22,6 +23,9 @@ group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
+
+# Search indexing using solr
+gem 'sunspot_rails'
 
 # Post rating/voting
 gem 'acts_as_votable', '~> 0.8.0'
