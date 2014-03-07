@@ -4,7 +4,4 @@ class Post < ActiveRecord::Base
 
 	acts_as_votable #Gem for voting on posts
 
-	searchable do
-		text :title, :text
-	end
 end
